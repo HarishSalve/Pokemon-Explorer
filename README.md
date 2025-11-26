@@ -35,3 +35,9 @@ Notes:
 
 - `useDebounce` hook has delay coverage (`src/hooks/useDebounce.test.js`).
 - `PokemonCard` component renders and calls handlers (`src/components/PokemonCard.test.js`).
+
+## Next improvements:
+
+- I will add routing links for detail pages and popup for UX so after refreshing the detail page will be open.
+- Add Home button/refresh on errors.
+- Will try to implement an infinite scroll.
