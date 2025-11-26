@@ -173,7 +173,7 @@ select {
 
 .banner.error {
   border-color: rgba(255, 99, 132, 0.6);
-  color: #ffc4c4;
+  color: #bd3333;
 }
 
 .banner.muted {
