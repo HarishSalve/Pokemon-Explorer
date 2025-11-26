@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# PokeAPI Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pokemon Explorer React app for browsing the PokeAPI with search, filters, sorting, pagination, favorites, and a detail view.
 
-## Available Scripts
+## To Run it 
 
-In the project directory, you can run:
+- Install dependency: `npm install`
+- Start dev server: `npm start` (http://localhost:3000)
+- To Run tests: `npm test`
+- Production build: `npm run build`
 
-### `npm start`
+## Features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Debounced global search + filter and sorting.
+- Paginated grid of Pokemon with caching and abort-safe requests.
+- Popup with pokemon detail panel with stats, abilities, height/weight.
+- Favorites stored in localStorage, quick access drawer and bulk clear.
+- Client-side pagination for list and type filters; search uses direct lookup.
+- Loading and error states across list/detail requests.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Architecture
 
-### `npm test`
+- `src/store/store.ts` — Added api calls with caching helpers.
+- `src/hooks/useFetchPokemonData.ts` — Created custom hook for list fetching, building data and sorting.
+- `src/context/FavoritesContext.tsx` — global favorites state with persistence.
+- `src/components/*` — focused UI components (filters, grid, cards, detail, pagination, favorites).
+- `src/hooks/useDebounce.ts` — custom debounce hook for search, can reuse it.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Notes:
+- Context is used instead of Redux for the small, app-wide favorites state.
+- Requests are abortable to avoid race conditions when search/filter changes.
+- List and type responses are cached in-memory; favorites are persisted.
 
-### `npm run build`
+## Testing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `useDebounce` hook has delay coverage (`src/hooks/useDebounce.test.js`).
+- `PokemonCard` component renders and calls handlers (`src/components/PokemonCard.test.js`).
