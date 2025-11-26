@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/HarishSalve/Pokemon-Explorer/static/css/main.fb67ed28.css",
-    "main.js": "/HarishSalve/Pokemon-Explorer/static/js/main.5d4358c2.js",
-    "static/js/453.9799b89c.chunk.js": "/HarishSalve/Pokemon-Explorer/static/js/453.9799b89c.chunk.js",
+    "main.js": "/HarishSalve/Pokemon-Explorer/static/js/main.bef78e96.js",
+    "static/js/453.3d9e712f.chunk.js": "/HarishSalve/Pokemon-Explorer/static/js/453.3d9e712f.chunk.js",
     "index.html": "/HarishSalve/Pokemon-Explorer/index.html",
     "main.fb67ed28.css.map": "/HarishSalve/Pokemon-Explorer/static/css/main.fb67ed28.css.map",
-    "main.5d4358c2.js.map": "/HarishSalve/Pokemon-Explorer/static/js/main.5d4358c2.js.map",
-    "453.9799b89c.chunk.js.map": "/HarishSalve/Pokemon-Explorer/static/js/453.9799b89c.chunk.js.map"
+    "main.bef78e96.js.map": "/HarishSalve/Pokemon-Explorer/static/js/main.bef78e96.js.map",
+    "453.3d9e712f.chunk.js.map": "/HarishSalve/Pokemon-Explorer/static/js/453.3d9e712f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fb67ed28.css",
-    "static/js/main.5d4358c2.js"
+    "static/js/main.bef78e96.js"
   ]
 }
