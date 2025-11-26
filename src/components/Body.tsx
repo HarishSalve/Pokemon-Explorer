@@ -8,7 +8,7 @@ import PokemonGrid from "./PokemonGrid";
 import SearchFilters from "./SearchFilters";
 import { useFavorites } from "../context/FavoritesContext";
 import useDebounce from "../hooks/useDebounce";
-import usePokemonQuery from "../hooks/useFetchPokemonData";
+import useFetchPokemonData from "../hooks/useFetchPokemonData";
 import { Pokemon } from "../types";
 
 const Body = () => {
@@ -20,7 +20,7 @@ const Body = () => {
 
   const debouncedSearch = useDebounce(searchTerm.trim().toLowerCase(), 400);
 
-  const { data, total, loading, error, types } = usePokemonQuery({
+  const { data, total, loading, error, types } = useFetchPokemonData({
     search: debouncedSearch,
     type: selectedType,
     page,

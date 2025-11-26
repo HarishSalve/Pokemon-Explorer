@@ -1,8 +1,8 @@
 {
-  "name": "myapp",
+  "name": "pokemon-explorer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/HarishSalve/Pokemon-Explorer",
+  "homepage": "https://harishsalve.github.io/Pokemon-Explorer",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
